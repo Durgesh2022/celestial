@@ -1,7 +1,7 @@
 
 // app/page.tsx
 
-import { Inter } from 'next/font/google';
+
 import Header from './components/header';
 import Layout from './components/layout';
 import Layout2 from './components/layout2';

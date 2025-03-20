@@ -48,7 +48,7 @@ const ContactForm = () => {
       <div className="text-center mb-8">
         <p className="text-sm mb-1">Connect</p>
         <h1 className="text-5xl font-bold mb-3">Get in Touch</h1>
-        <p>We're here to help you with your inquiries.</p>
+        <p>We&apos;re here to help you with your inquiries.</p>
       </div>
 
       <form onSubmit={handleSubmit} className="max-w-3xl mx-auto">

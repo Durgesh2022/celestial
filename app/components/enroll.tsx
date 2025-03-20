@@ -33,7 +33,7 @@ export default function EnrollPage() {
             <p className="text-lg">
               Embarking on your Reiki certification is a transformative experience. Follow 
               our simple steps to gain the knowledge and skills needed to practice Reiki 
-              effectively. With our comprehensive courses, you'll be guided every step of 
+              effectively. With our comprehensive courses, you&apos;ll be guided every step of 
               the way.
             </p>
           </div>

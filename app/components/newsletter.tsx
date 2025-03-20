@@ -8,19 +8,20 @@ const NewsletterSubscription = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setError('');
-    
+
     try {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       // Success handling
       setIsSuccess(true);
       setEmail('');
-    } catch (err) {
+    } catch (error) {
+      // Using the error parameter instead of declaring unused 'err'
       setError('Something went wrong. Please try again.');
     } finally {
       setIsSubmitting(false);
@@ -35,14 +36,12 @@ const NewsletterSubscription = () => {
             Stay Updated with Our Newsletter
           </h2>
         </div>
-        
+
         <div className="w-full md:w-1/2">
           <p className="mb-6">
-            Join our community to receive the latest news, tips, and exclusive content on
-            Reiki and spiritual growth. Don't miss out on valuable insights that can
-            enhance your journey.
+            Join our community to receive the latest news, tips, and exclusive content on Reiki and spiritual growth. Don&apos;t miss out on valuable insights that can enhance your journey.
           </p>
-          
+
           <form onSubmit={handleSubmit} className="mb-2">
             <div className="flex flex-col sm:flex-row gap-4">
               <input
@@ -62,19 +61,19 @@ const NewsletterSubscription = () => {
               </button>
             </div>
           </form>
-          
+
           {isSuccess && (
             <p className="text-green-600 text-sm mt-2">
               Thank you for subscribing!
             </p>
           )}
-          
+
           {error && (
             <p className="text-red-600 text-sm mt-2">
               {error}
             </p>
           )}
-          
+
           <p className="text-sm text-gray-700 mt-4">
             By clicking Subscribe Now, you confirm your agreement with our Terms and Conditions.
           </p>
