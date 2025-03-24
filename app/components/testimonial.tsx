@@ -2,9 +2,16 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import FancyTestimonialsSlider from "./testimonialcourosel";
 
+// Define the Testimonial interface to match what FancyTestimonialsSlider expects
+interface Testimonial {
+  img: string;
+  quote: string;
+  name: string;
+  role: string;
+}
 
 const Testimonial: NextPage = () => {
-  const testimonials = [
+  const testimonials: Testimonial[] = [
     {
       img: "/image1.jpg", // Use imported StaticImageData
       quote:
@@ -39,7 +46,7 @@ const Testimonial: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex min-h-screen items-center justify-center ">
+      <main className="flex min-h-screen items-center justify-center">
         <FancyTestimonialsSlider testimonials={testimonials} />
       </main>
     </div>
