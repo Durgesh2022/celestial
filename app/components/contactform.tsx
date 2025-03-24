@@ -1,10 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, ChangeEvent, FormEvent } from "react";
 import { ChevronDownIcon } from "lucide-react";
 
+interface FormDataType {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  topic: string;
+  source: string;
+  message: string;
+  agreeToTerms: boolean;
+}
+
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormDataType>({
     firstName: "",
     lastName: "",
     email: "",
@@ -15,7 +26,7 @@ const ContactForm = () => {
     agreeToTerms: false,
   });
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -23,7 +34,7 @@ const ContactForm = () => {
     }));
   };
 
-  const handleCheckboxChange = (e) => {
+  const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -31,14 +42,14 @@ const ContactForm = () => {
     }));
   };
 
-  const handleRadioChange = (e) => {
+  const handleRadioChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData((prev) => ({
       ...prev,
       source: e.target.value,
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
   };
