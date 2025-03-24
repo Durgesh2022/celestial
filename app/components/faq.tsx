@@ -1,10 +1,11 @@
 "use client"
-import { useState } from 'react';
+
+import React, { useState, ReactNode } from 'react';
 import { ChevronUpIcon } from 'lucide-react';
 
 interface FAQItem {
   question: string;
-  answer: string | JSX.Element;
+  answer: string | ReactNode;
 }
 
 const ReikiFAQs = () => {
@@ -38,7 +39,7 @@ const ReikiFAQs = () => {
   ];
 
   return (
-    <div className="  px-4 py-8 flex items-center">
+    <div className="px-4 py-8 flex items-center">
       <div className="flex flex-col md:flex-row gap-8">
         <div className="md:w-1/3">
           <h1 className="text-6xl font-bold mb-4">FAQs</h1>
